@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' show Random;
 
 class Stack<T> {
   List<T> _dataStore = <T>[];
@@ -85,8 +85,8 @@ void quickSortNoRe(List list) {
 void main() {
   var list = List<int>();
   Random random = new Random();
-  for (var i = 0; i < 1000; i++) {
-    list.add(random.nextInt(1000));
+  for (var i = 0; i < 20; i++) {
+    list.add(random.nextInt(100));
   }
   print(list.toString());
   quickSortNoRe(list);
