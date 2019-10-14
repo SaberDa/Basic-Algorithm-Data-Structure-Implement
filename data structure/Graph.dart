@@ -55,7 +55,7 @@ class Graph<T> {
     var s = '';
     for (T value in adjList.keys) {
       s += value.toString() + ' -> ';
-      for (T n in adjList[v]) {
+      for (T n in adjList[value]) {
         s += n.toString() + ' ';
       }
       s += '\n';
