@@ -23,20 +23,35 @@ class DynamicBinding : public Binding {
     }
 };
 
+class SecondDynamicBinding : public DynamicBinding {
+    public:
+    void binding() {
+        cout << "This is Class: SecondDynamicBinding" << endl;
+    }
+    
+    virtual void dynamicBinding() {
+        cout << "This is Class: SecondDynamicBinding" << endl;
+    }
+};
+
 int main() {
     Binding* pBinding = new Binding();
     DynamicBinding* pDynamicBinding = new DynamicBinding();
-    Binding* pTest = pDynamicBinding;
+    SecondDynamicBinding* pSecondDynamicBinding = new SecondDynamicBinding();
+    Binding* pTest1 = pDynamicBinding;
+    Binding* pTest2 = pSecondDynamicBinding;
 
     cout << "The first part" << endl;
     pBinding->binding();
     pDynamicBinding->binding();
-    pTest->binding();
+    pTest1->binding();
+    pTest2->binding();
 
     cout << "The second part" << endl;
     pBinding->dynamicBinding();
     pDynamicBinding->dynamicBinding();
-    pTest->dynamicBinding();
+    pTest1->dynamicBinding();
+    pTest2->dynamicBinding();
 
 }
 
